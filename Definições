@@ -1,0 +1,5 @@
+Dados = fatos que podem ser armazenados e têm um significado implícito.
+Banco de dados = uma coleção de dados relacionados.
+SGBD = sistema computadorizado que permite definir, construir, manipular e compartilhar informações no bando de dados.
+Meta-dados = informações descritas sobre o banco de dados na forma de catálogo.
+Sistema de dados = banco de dados + sistema gerenciador.
