@@ -1,0 +1,45 @@
+O Modelo Entidade-Relacionamento (MER) é um tipo de modelagem conceitual utilizado no projeto de bancos de dados.
+Sua finalidade é representar, de maneira abstrata, os elementos relevantes de um domínio de negócios.
+Ele faz isso através da identificação de entidades (objetos de interesse), a descrição de suas características (atributos) e a definição das relações existentes entre essas entidades.
+
+Entidade (coisa/objeto) - atributos 
+Aluno                   - RA/CPF/nome
+
+Os atributos podem ser:
+*Simples ou compostos;
+*Valor-únnico ou multi-valorado;
+*Armazenado ou derivado.
+
+Atributos simples e compostos:
+*Atributos compostos podem ser divididos em subunidades, como nome, que pode ser dividido em primeiro nome, nome do meio e sobrenome.
+Podendo até formar uma hierarquia, como endereço, que se divide em número, localização, complemento e logradouro, e em localização há bairro, cidade, CEP e estado;
+*E os que não podem ser divididos são chamados de atributos simples ou autômicos.
+
+Atributos de Valor-Único e Multi-Valorados:
+Valor-Único: o salário de um professor;
+Muilti_valorados: um professor com mais de uma titulação
+
+Atributos Armazenados e Derivados:
+É possível que atributos estejam relacionados, como idade e data de nascimento. Pois é só fazer a data de hoje menos a data de nascimento para se ter a idade.
+Dessa forma, idade é chamada de atributo derivado, pois é derivada da data de nascimento, que é chamado de atributo armazenado.
+
+Tipos de Conjuntos de Entidades
+Tipo de entidade = coleção de entidades dos mesmos atributos
+Conjunto da entidade = a coleção de todos os elementos de um tipo de entidade
+
+Tipo de entidade = retângulo
+nomes dos atributos = oval
+atributos multi-valorados = ovais duplo
+
+Atributos Chave/registro de unicidade
+É o que identifica a entidade
+É identificado por estar sublinhado
+
+Domínio/conjuto de valores dos atributos
+é um número decimal positivo ou negativo
+é vespertino ou noturno
+ou seja, dominio é a definição dos valores dos atributos de uma entidade 
+
+Conjunto de relacionamento = coleção de todos os elementos de um tipo de relacionamento.
+O grua de relacinamneto de dá pelo número de entidades que participam do relacionamento. 
+Cada entidade tem seu papel no relacionamento. E as vezes tem papeis diferentes em relacionamentos diferentes, isso é chamado de relacionamentos recursivos
