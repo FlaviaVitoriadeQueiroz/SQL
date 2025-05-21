@@ -1,0 +1,2 @@
+DELETE FROM PESSOA 
+WHERE IDpessoa = 2;

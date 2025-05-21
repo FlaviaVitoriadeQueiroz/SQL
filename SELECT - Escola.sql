@@ -1,0 +1,5 @@
+SELECT * FROM PESSOA 
+
+SELECT Nome, Idade
+FROM PESSOA
+WHERE IDpessoa = 1
