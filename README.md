@@ -6,7 +6,7 @@ Os arquivos incluem comandos essenciais para manipulação e consulta de dados e
 
 ## 🎯 Objetivo
 
-Consolidar o aprendizado em *SQL* através da prática dos principais comandos utilizados na criação, manipulação e consulta de dados em bancos relacionais.
+Consolidar o aprendizado em *SQL* (MySQL, Server SQL, PostgrerSQL, SQLite e Oracle) através da prática dos principais comandos utilizados na criação, manipulação e consulta de dados em bancos relacionais.
 
 
 ## 🧠 Conteúdos Abordados
