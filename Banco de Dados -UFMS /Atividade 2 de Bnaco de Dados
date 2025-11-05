@@ -1,0 +1,182 @@
+CREATE DATABASE universidade;
+
+USE universidade;
+
+
+
+CREATE TABLE pessoa (
+
+  cpf CHAR(11) PRIMARY KEY,
+
+  nome_completo VARCHAR(100) NOT NULL,
+
+  data_de_nascimento DATE,
+
+  email VARCHAR(100)
+
+);
+
+
+
+CREATE TABLE professor (
+
+  id_professor INT AUTO_INCREMENT PRIMARY KEY,
+
+  cpf CHAR(11),
+
+  titulo_academico VARCHAR(100),
+
+  area_de_atuacao VARCHAR(100),
+
+  FOREIGN KEY (cpf) REFERENCES pessoa(cpf)
+
+);
+
+
+
+CREATE TABLE aluno (
+
+  rga INT AUTO_INCREMENT PRIMARY KEY,
+
+  cpf CHAR(11),
+
+  curso_matriculado VARCHAR(100),
+
+  ano_de_ingresso YEAR,
+
+  FOREIGN KEY (cpf) REFERENCES pessoa(cpf)
+
+);
+
+
+
+CREATE TABLE disciplinas (
+
+  id_disciplina INT AUTO_INCREMENT PRIMARY KEY,
+
+  nome_da_disciplina VARCHAR(100),
+
+  carga_horaria INT
+
+);
+
+
+
+CREATE TABLE turma (
+
+  id_turma INT AUTO_INCREMENT PRIMARY KEY,
+
+  id_disciplina INT,
+
+  id_professor INT,
+
+  rga INT,
+
+  data_da_matricula DATE,
+
+  nota_final DECIMAL(5,2),
+
+  FOREIGN KEY (id_disciplina) REFERENCES disciplinas(id_disciplina),
+
+  FOREIGN KEY (id_professor) REFERENCES professor(id_professor),
+
+  FOREIGN KEY (rga) REFERENCES aluno(rga)
+
+);
+
+
+
+USE universidade;
+
+
+
+INSERT INTO pessoa (cpf, nome_completo, data_de_nascimento, email)
+
+VALUES
+
+('12345678901', 'Ana Silva', '1990-05-14', 'ana.silva@email.com'),
+
+('98765432100', 'Bruno Costa', '1985-09-22', 'bruno.costa@email.com'),
+
+('45678912333', 'Carla Mendes', '1998-12-01', 'carla.mendes@email.com');
+
+
+
+INSERT INTO professor (cpf, titulo_academico, area_de_atuacao)
+
+VALUES
+
+('12345678901', 'Doutora em Computação', 'Inteligência Artificial'),
+
+('98765432100', 'Mestre em Matemática', 'Estatística'),
+
+('45678912333', 'Especialista em Engenharia de Software', 'Desenvolvimento Web');
+
+
+
+INSERT INTO aluno (cpf, curso_matriculado, ano_de_ingresso)
+
+VALUES
+
+('12345678901', 'Ciência da Computação', 2020),
+
+('98765432100', 'Engenharia de Software', 2021),
+
+('45678912333', 'Sistemas de Informação', 2022);
+
+
+
+INSERT INTO disciplinas (nome_da_disciplina, carga_horaria)
+
+VALUES
+
+('Banco de Dados', 60),
+
+('Programação Web', 80),
+
+('Engenharia de Software', 70);
+
+
+
+INSERT INTO turma (id_disciplina, id_professor, rga, data_da_matricula, nota_final)
+
+VALUES
+
+(1, 1, 1, '2024-02-10', 8.5),
+
+(2, 2, 2, '2024-02-12', 9.0),
+
+(3, 3, 3, '2024-02-15', 7.8);
+
+
+
+SELECT 
+
+    p.nome_completo AS Aluno,
+
+    d.nome_da_disciplina AS Disciplina,
+
+    t.nota_final AS Nota
+
+FROM turma t
+
+JOIN aluno a ON t.rga = a.rga
+
+JOIN pessoa p ON a.cpf = p.cpf
+
+JOIN disciplinas d ON t.id_disciplina = d.id_disciplina
+
+ORDER BY p.nome_completo;
+
+
+
+SELECT * FROM disciplinas WHERE carga_horaria > 60 ORDER BY carga_horaria DESC;
+
+
+
+SELECT * FROM turma WHERE nota_final > 8 ORDER BY nota_final DESC;
+
+
+
+SELECT * FROM aluno WHERE curso_matriculado = 'Sistemas de Informação';
+
