@@ -18,6 +18,10 @@ Consolidar o aprendizado em *SQL* (MySQL, Server SQL, PostgrerSQL, SQLite e Orac
 -  Consultas básicas (SELECT)
 -  Cláusulas importantes: WHERE, AND, OR, ORDER BY, LIMIT
 -  Noções de modelo entidade-relacionamento (ER)
+-  Join
+-  Secregação Interna
+-  Comandos de ABD
+-  Index
 
 ## 📌 Observações
 
