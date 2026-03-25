@@ -1,3 +1,0 @@
-UPDATE PESSOA 
-SET Contato = '(17)991904245'
-WHERE IDpessoa = 1;
